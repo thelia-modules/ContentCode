@@ -96,7 +96,7 @@ class ContentCode extends BaseLoop implements PropelSearchLoopInterface
     {
         $query = ContentCodeQuery::create();
 
-        if (null !== $ids = $this->gedId()) {
+        if (null !== $ids = $this->getId()) {
             $query->filterById($ids);
         }
 
