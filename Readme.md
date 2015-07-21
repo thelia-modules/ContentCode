@@ -14,14 +14,14 @@ This module allows you to add unique codes for contents. It may be used to retri
 Execute this in a terminal, in your thelia directory:
 
 ```
-$ composer require thelia/content-code-module:~1.0
+$ composer require thelia/content-code-module:~1.1
 ```
 
 or add it in your main thelia composer.json file
 
 ```
 "require": {
- "thelia/content-code-module": "~1.0"
+ "thelia/content-code-module": "~1.1"
 }
 ```
 
