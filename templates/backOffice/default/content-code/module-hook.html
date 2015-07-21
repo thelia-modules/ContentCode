@@ -1,0 +1,47 @@
+<div class="well well-lg">
+    <form action="{url path="/admin/content/code/update"}" method="post">
+        {form name="content-code-form"}
+            {render_form_field field="success_url" value={url current=1 current_tab="modules"}}
+            {render_form_field field="error_url"  value={url current=1 current_tab="modules"}}
+
+            {form_hidden_fields}
+
+            {form_field field="content_id"}
+                <input type="hidden" name="{$name}" value="{$content_id}" />
+            {/form_field}
+
+            {form_field field="code"}
+
+                {if $form_error}
+                    <div class="alert alert-danger">
+                        {$form_error_message}
+                    </div>
+                {/if}
+
+                {form_error field="code"}
+                    <div class="alert alert-danger">
+                        {$message}
+                    </div>
+                {/form_error}
+
+
+                <div class="form-group">
+                    <label for="content-unique-code">
+                        {intl l="Unique code for the content" d="contentcode.bo.default"}
+                    </label>
+
+                    <div class="row">
+                        <div class="col-md-11">
+                            <input type="text" name="{$name}" id="content-unique-code" value="{$value|default:$currentCode}" class="form-control" />
+                        </div>
+
+                        <div class="col-md-1">
+                            <input type="submit" class="btn btn-success" value="{intl l="Submit" d="contentcode.bo.default"}" />
+                        </div>
+                    </div>
+                </div>
+            {/form_field}
+
+        {/form}
+    </form>
+</div>

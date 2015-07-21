@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database defaultIdMethod="native" name="thelia"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../../../../vendor/propel/propel/resources/xsd/database.xsd" >
+    <table name="content_code" namespace="ContentCode\Model">
+        <column name="id" type="INTEGER" autoIncrement="true" required="true" primaryKey="true" />
+        <column name="content_id" type="INTEGER" required="true" />
+        <column name="code" type="VARCHAR" size="255" />
+
+        <foreign-key foreignTable="content" name="fk_content_code_content_id">
+            <reference local="content_id" foreign="id" />
+        </foreign-key>
+        <index name="idx_content_code_content_fk">
+            <index-column name="content_id" />
+        </index>
+
+        <unique name="UNIQUE_code">
+            <unique-column name="code" />
+        </unique>
+    </table>
+
+    <external-schema filename="local/config/schema.xml" referenceOnly="true" />
+</database>

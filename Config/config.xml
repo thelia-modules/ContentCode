@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns="http://thelia.net/schema/dic/config"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
+
+    <loops>
+        <loop name="content-code" class="ContentCode\Loop\ContentCde" />
+    </loops>
+
+    <forms>
+        <form name="content-code-form" class="ContentCode\Form\ContentCodeForm" />
+    </forms>
+
+    <services>
+        <service id="content_code.action_listener" class="ContentCode\Action\ContentCode">
+            <tag name="kernel.event_subscriber" />
+        </service>
+    </services>
+
+    <hooks>
+        <hook id="contentcode.hook" class="ContentCode\Hook\ContentCodeHook" scope="request">
+            <tag name="hook.event_listener" event="content.tab-content" type="back" active="1" />
+        </hook>
+    </hooks>
+</config>
