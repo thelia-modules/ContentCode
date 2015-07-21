@@ -44,6 +44,8 @@ class ContentCode extends BaseLoop implements PropelSearchLoopInterface
                 ->set("CONTENT_ID", $contentCode->getContentId())
                 ->set("CODE", $contentCode->getCode())
             ;
+
+            $loopResult->addRow($row);
         }
 
         return $loopResult;
