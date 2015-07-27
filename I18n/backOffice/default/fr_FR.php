@@ -2,5 +2,5 @@
 
 return array(
     'Submit' => 'Envoyer',
-    'Unique code for the content' => 'Code unique pour le contenui',
+    'Unique code for the content' => 'Code unique pour le contenu',
 );
