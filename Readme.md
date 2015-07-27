@@ -14,14 +14,14 @@ This module allows you to add unique codes for contents. It may be used to retri
 Execute this in a terminal, in your thelia directory:
 
 ```
-$ composer require thelia/content-code-module:~1.1
+$ composer require thelia/content-code-module:~1.2
 ```
 
 or add it in your main thelia composer.json file
 
 ```
 "require": {
- "thelia/content-code-module": "~1.1"
+ "thelia/content-code-module": "~1.2"
 }
 ```
 
@@ -62,5 +62,23 @@ This module uses the ```content.tab-content``` hook to add the code form.
     {loop type="content" name="content" id=$CONTENT_ID}
         ...
     {/loop}
+{/loop}
+```
+
+[content-extend-content-code]
+
+Extends the Thelia loop : [Content](http://doc.thelia.net/en/documentation/loop/content.html)
+
+### Other input arguments
+
+|Argument |Description |
+|---      |--- |
+|**code** | The content code |
+
+### Exemple
+
+```smarty
+{loop type="content-extend-content-code" name="content-extend-content-code" code="foo"}
+    ...
 {/loop}
 ```

@@ -6,6 +6,7 @@
 
     <loops>
         <loop name="content-code" class="ContentCode\Loop\ContentCode" />
+        <loop name="content-extend-content-code" class="ContentCode\Loop\ContentExtendContentCode" />
     </loops>
 
     <forms>
